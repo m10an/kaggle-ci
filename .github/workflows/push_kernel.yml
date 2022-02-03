@@ -1,0 +1,15 @@
+name: Push kernel
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
