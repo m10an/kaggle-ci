@@ -22,4 +22,9 @@ jobs:
           echo "::group::Requirements"
           pip install -r requirements.txt
           echo "::endgroup::"
-          
+
+      - name: Init metadata and code file
+        run: python kci/init.py -s "$(git branch --show-current)" -r "$(git rev-parse --short HEAD)"
+
+      - name: Push kernel
+        run: kaggle k push
