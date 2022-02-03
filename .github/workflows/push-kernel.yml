@@ -25,6 +25,11 @@ jobs:
 
       - name: Init metadata and code file
         run: python kci/init.py -s "$(git branch --show-current)" -r "$(git rev-parse --short HEAD)"
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
 
       - name: Push kernel
         run: kaggle k push
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
