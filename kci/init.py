@@ -30,6 +30,7 @@ def main():
         code = c.read()
     code = code.replace("REVISION = None  # <", f"REVISION = '{args.revision}'", 1)
 
+    args.slug = args.slug.split('/')[-1]
     metadata['id'] = args.username + '/' + args.slug
     metadata['code_file'] = code_file
     metadata['title'] = args.slug
