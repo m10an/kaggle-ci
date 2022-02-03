@@ -1,3 +1,7 @@
+/kernel-metadata.json
+/script.py
+/notebook.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
